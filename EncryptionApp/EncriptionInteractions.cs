@@ -8,9 +8,9 @@ namespace EncryptionApp
         public static char[] alphabet = new char[] { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
         
         //расшифровка текста
-        public static string Decipher(string cipheredText, string key)
+        public static string Decipher(string cipheredText, string keyword)
         {
-            string cipheredTextLow = cipheredText.ToLower(), deciphedText = "";
+            string key = keyword.ToLower(), cipheredTextLow = cipheredText.ToLower(), deciphedText = "";
             int positionKey = 0;
             foreach (char symbol in cipheredTextLow)
             {
@@ -38,9 +38,9 @@ namespace EncryptionApp
         }
 
         //шифрование текста
-        public static string Cipher(string text, string key)
+        public static string Cipher(string text, string keyword)
         {
-            string textLow = text.ToLower(), cipheredText = "";
+            string key = keyword.ToLower(), textLow = text.ToLower(), cipheredText = "";
             int positionKey = 0;
             foreach (char symbol in textLow)
             {
